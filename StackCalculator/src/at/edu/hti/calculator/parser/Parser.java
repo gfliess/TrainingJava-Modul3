@@ -12,12 +12,13 @@ import at.edu.hti.calculator.Calculator;
 import at.edu.hti.calculator.CalculatorException;
 import at.edu.hti.calculator.Calculator.Operation;
 
-
 public class Parser {
 
 	private Calculator calc_;
 
 	public Parser(Calculator cal) {
+		if (cal == null)
+			throw new IllegalArgumentException("Calculator not set");
 		calc_ = cal;
 	}
 

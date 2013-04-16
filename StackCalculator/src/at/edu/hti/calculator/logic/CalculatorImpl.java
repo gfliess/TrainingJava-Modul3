@@ -13,8 +13,8 @@ public class CalculatorImpl implements Calculator {
 	@Override
 	public double perform(Operation op) throws CalculatorException {
 
-		double a = pop();
 		double b = pop();
+		double a = pop();
 
 		switch (op) {
 		case add:

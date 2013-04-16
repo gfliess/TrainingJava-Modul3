@@ -22,6 +22,30 @@ public class CalculatorTest {
 		assertEquals(5, result, 0);
 
 	}
+	
+	@Test
+	public void testSimpleMulOperation() throws Exception {
+
+		Calculator calc = new CalculatorImpl();
+		calc.push(2.0);
+		calc.push(3);
+		double result = calc.perform(Operation.mul);
+
+		assertEquals(6, result, 0);
+
+	}
+	
+	@Test
+	public void testSimpleDivOperation() throws Exception {
+
+		Calculator calc = new CalculatorImpl();
+		calc.push(6.0);
+		calc.push(2);
+		double result = calc.perform(Operation.div);
+
+		assertEquals(3, result, 0);
+
+	}
 
 	//
 	@Test(expected = CalculatorException.class)
@@ -37,8 +61,8 @@ public class CalculatorTest {
 
 		Calculator calc = new CalculatorImpl();
 		try {
-			calc.push(0);
 			calc.push(2);
+			calc.push(0);
 			calc.perform(Operation.div);
 			fail("Exception expected");
 
